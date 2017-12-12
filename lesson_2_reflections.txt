@@ -1,0 +1,60 @@
+What happens when you initialize a repository? Why do you need to do it?
+ 
+ By using the Command 'git init' we can initiliaze a respository.
+ Initially the repository has 0 commits, this can be checked via the git log command.
+ 'git status' can be used to check the last changes that were made to your repository.
+
+How is the staging area different from the working directory and the repository?
+What value do you think it offers?
+
+	Staging Area contains the files that are to be committed in the repository.
+	Working Directory contains the files you are working on.
+	Repository contains various commits each having its own id.
+
+How can you use the staging area to make sure you have one commit per logical
+change?
+	'git diff commit1 commit2' compares the commits whose ids are provided.
+	'git diff' compares the files in the working directory to the files in the staging area.
+	'git diff --staged' compares the files in the staging area to the HEAD of the Repository.
+	'git reset --hard' throws away all the uncommited changes.
+
+What are some situations when branches would be helpful in keeping your history
+organized? How would branches help?
+	Branches in Git are very useful when you want to test some features in your project without affecting the main project.
+	'git branch branch_name' creates a new branch.
+	'git checkout branch_name' switches to the branch_name you provide.
+	'git checkout -b branch_name' is equivalent to running 'git branch branch_name' and 'git checkout branch_name'.
+
+How do the diagrams help you visualize the branch structure?
+	They help us in determining the commits a branch contains.
+	Diagrams help visualize the reachability of a particular commit.
+
+What is the result of merging two branches together? Why do we represent it in
+the diagram the way we do?
+	
+	Merging two branches together allows us to have the commits of both the branches reachable.
+	This can be done using the command:
+	'git merge master or branch_name1 branch_name2'
+	'git show commit_id' is used to run 'git diff' on a commit whose parent is not known.
+	'git branch -d branch_name' deletes a branch
+
+
+What are the pros and cons of Git's automatic merging vs. always doing merges
+manually?
+	When merging automatically,conflicts might occur when two functions with different names but same function are present.Then git wont know that they are the same functions.
+	Therefore a merging conflict might occur.
+
+
+
+
+'git log -n 1' n denotes the number of commits to be shown.
+git log --graph --oneline shows all the commits with their messages in one line.
+
+
+
+	A remote is a place where the code is stored in git.
+	'git remote' shows all the remotes.
+	'git remote add remote_name "url"' is used to set the url to push or fetch.
+	'git remote -v' is also used to show all the remotes with the urls.
+	'git push remote_name branch_name'  
+
